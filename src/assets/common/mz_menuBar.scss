@@ -1,0 +1,65 @@
+@mixin menu_border{
+  .mz {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    .content {
+      flex: 1;
+      font-size: 18px;
+      color: #000;
+    }
+    &_menuBar {
+      height: px2rem(100);
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background: #fff;
+      &_ul {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: space-around;
+        li {
+          height: 100%;
+          a {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            color: #797d82;
+            align-items: center;
+            font-size: 10px;
+            &.active {
+              color: #ff5f16
+            }
+            i {
+              font-size: 21px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.mz_menuBar_ul::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  height: 1px;
+  width: 100%;
+  background: #ededed;
+  transform: scaleY(.5);
+}
+.mz_menuBar_ul::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  height: 1px;
+  width: 100%;
+  background: #ededed;
+  transform: scaleY(.5);
+}
